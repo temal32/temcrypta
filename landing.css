@@ -1,0 +1,638 @@
+/* landing.css */
+:root {
+    --bg-color: #0a0e17;
+    --bg-color-light: #141c2b;
+    --primary-color: #4f46e5;
+    --primary-light: #6366f1;
+    --primary-dark: #4338ca;
+    --primary-bg: rgba(79, 70, 229, 0.1);
+    --secondary-color: #818cf8;
+    --text-color: #f3f4f6;
+    --text-color-muted: #9ca3af;
+    --border-color: #2e344a;
+    --success-color: #10b981;
+    --error-color: #ef4444;
+    --card-bg: #192135;
+    --hover-bg: rgba(255, 255, 255, 0.05);
+    --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.1);
+    --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1);
+    --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.1);
+    --transition-fast: 0.15s ease;
+    --transition-normal: 0.25s ease;
+    --transition-slow: 0.5s ease;
+    --border-radius-sm: 4px;
+    --border-radius-md: 8px;
+    --border-radius-lg: 12px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+}
+
+/* Header Styles */
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(10, 14, 23, 0.9);
+    backdrop-filter: blur(10px);
+    z-index: 100;
+    box-shadow: var(--shadow-md);
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.25rem 1.5rem;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--text-color);
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.logo i {
+    color: var(--primary-color);
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+    align-items: center;
+}
+
+nav a {
+    color: var(--text-color);
+    text-decoration: none;
+    font-weight: 500;
+    transition: color var(--transition-fast);
+}
+
+nav a:hover {
+    color: var(--primary-light);
+}
+
+.cta-button {
+    display: inline-block;
+    padding: 0.6rem 1.2rem;
+    border-radius: var(--border-radius-md);
+    font-weight: 500;
+    transition: all var(--transition-fast);
+    text-decoration: none;
+    background-color: transparent;
+    border: 1px solid var(--primary-color);
+    color: var(--primary-color);
+}
+
+.cta-button:hover {
+    background-color: var(--primary-bg);
+    transform: translateY(-2px);
+}
+
+.cta-button.primary {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+.cta-button.primary:hover {
+    background-color: var(--primary-dark);
+}
+
+.cta-button.secondary {
+    border-color: var(--text-color);
+    color: var(--text-color);
+}
+
+.cta-button.secondary:hover {
+    background-color: rgba(255, 255, 255, 0.05);
+}
+
+.cta-group {
+    display: flex;
+    gap: 1rem;
+    margin-top: 2rem;
+}
+
+/* Hero Section */
+.hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    padding: 6rem 0;
+    background: linear-gradient(135deg, var(--bg-color) 0%, var(--bg-color-light) 100%);
+}
+
+.hero .container {
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.hero-content {
+    flex: 1;
+    min-width: 300px;
+}
+
+.hero-content h1 {
+    font-size: 3rem;
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 1.5rem;
+    background: linear-gradient(90deg, var(--text-color) 0%, var(--primary-light) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.hero-content p {
+    font-size: 1.25rem;
+    color: var(--text-color-muted);
+    margin-bottom: 2rem;
+}
+
+.hero-animation {
+    flex: 1;
+    min-width: 400px;
+    background-color: var(--bg-color-light);
+    border-radius: var(--border-radius-lg);
+    padding: 1.5rem;
+    box-shadow: var(--shadow-lg);
+    display: flex;
+    flex-direction: column;
+}
+
+/* Encryption Animation Styles */
+.encryption-animation {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.device {
+    background-color: var(--card-bg);
+    border-radius: var(--border-radius-md);
+    overflow: hidden;
+    box-shadow: var(--shadow-md);
+}
+
+.device-header {
+    background-color: var(--bg-color);
+    padding: 0.75rem 1rem;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.device-name {
+    font-weight: 600;
+    font-size: 0.9rem;
+}
+
+.device-content {
+    padding: 1rem;
+    min-height: 80px;
+}
+
+.message-input, .message-display {
+    background-color: var(--bg-color);
+    border-radius: var(--border-radius-sm);
+    padding: 0.75rem 1rem;
+}
+
+.message-text {
+    word-break: break-word;
+}
+
+.encryption-process {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 0;
+}
+
+.process-step {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    position: relative;
+    flex: 1;
+}
+
+.step-icon {
+    width: 40px;
+    height: 40px;
+    background-color: var(--bg-color);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-color-muted);
+    font-size: 1rem;
+    z-index: 2;
+    transition: all var(--transition-normal);
+}
+
+.step-line {
+    height: 2px;
+    width: 100%;
+    background-color: var(--border-color);
+    position: absolute;
+    top: 20px;
+    left: 50%;
+    z-index: 1;
+}
+
+.process-step:last-child .step-line {
+    display: none;
+}
+
+.step-label {
+    font-size: 0.8rem;
+    color: var(--text-color-muted);
+    text-align: center;
+    transition: all var(--transition-normal);
+}
+
+.process-step.active .step-icon {
+    background-color: var(--primary-color);
+    color: white;
+    transform: scale(1.1);
+}
+
+.process-step.active .step-label {
+    color: var(--primary-light);
+    font-weight: 500;
+}
+
+.process-step.completed .step-icon {
+    background-color: var(--success-color);
+    color: white;
+}
+
+.encryption-data {
+    background-color: var(--bg-color);
+    border-radius: var(--border-radius-md);
+    padding: 1rem;
+    margin-top: 1rem;
+}
+
+.data-text {
+    color: var(--text-color-muted);
+    font-size: 0.9rem;
+    margin-bottom: 0.5rem;
+}
+
+.encrypted-text {
+    font-family: monospace;
+    font-size: 0.8rem;
+    color: var(--primary-light);
+    background-color: rgba(79, 70, 229, 0.05);
+    padding: 0.75rem;
+    border-radius: var(--border-radius-sm);
+    overflow-x: auto;
+    max-height: 80px;
+    transition: all var(--transition-normal);
+}
+
+/* Features Section */
+.features {
+    padding: 6rem 0;
+    background-color: var(--bg-color-light);
+}
+
+.features h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+    color: var(--text-color);
+}
+
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.feature-card {
+    background-color: var(--card-bg);
+    border-radius: var(--border-radius-lg);
+    padding: 2rem;
+    box-shadow: var(--shadow-md);
+    transition: transform var(--transition-normal);
+}
+
+.feature-card:hover {
+    transform: translateY(-5px);
+}
+
+.feature-icon {
+    width: 60px;
+    height: 60px;
+    background-color: var(--primary-bg);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1.5rem;
+    color: var(--primary-color);
+    font-size: 1.5rem;
+}
+
+.feature-card h3 {
+    font-size: 1.25rem;
+    margin-bottom: 1rem;
+    color: var(--text-color);
+}
+
+.feature-card p {
+    color: var(--text-color-muted);
+}
+
+/* Security Section */
+.security {
+    padding: 6rem 0;
+    background-color: var(--bg-color);
+}
+
+.security .container {
+    display: flex;
+    gap: 3rem;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.security-content {
+    flex: 1;
+    min-width: 300px;
+}
+
+.security-content h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+    color: var(--text-color);
+}
+
+.security-content p {
+    color: var(--text-color-muted);
+    margin-bottom: 1.5rem;
+}
+
+.security-list {
+    list-style: none;
+    margin-bottom: 2rem;
+}
+
+.security-list li {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 0.75rem;
+    color: var(--text-color);
+}
+
+.security-list i {
+    color: var(--success-color);
+}
+
+.security-note {
+    background-color: var(--primary-bg);
+    border-radius: var(--border-radius-md);
+    padding: 1rem;
+    border-left: 3px solid var(--primary-color);
+}
+
+.security-image {
+    flex: 1;
+    min-width: 300px;
+    display: flex;
+    justify-content: center;
+}
+
+.security-image img {
+    max-width: 100%;
+    border-radius: var(--border-radius-lg);
+    box-shadow: var(--shadow-lg);
+}
+
+/* About Section */
+.about {
+    padding: 6rem 0;
+    background-color: var(--bg-color-light);
+}
+
+.about h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    color: var(--text-color);
+}
+
+.about-text {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto 3rem;
+    color: var(--text-color-muted);
+    font-size: 1.1rem;
+    line-height: 1.7;
+}
+
+.github-section {
+    background-color: var(--card-bg);
+    border-radius: var(--border-radius-lg);
+    padding: 2.5rem;
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+    box-shadow: var(--shadow-lg);
+}
+
+.github-section h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: var(--text-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75rem;
+}
+
+.github-section p {
+    color: var(--text-color-muted);
+    margin-bottom: 1.5rem;
+}
+
+.github-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.75rem;
+    background-color: #24292e;
+    color: white;
+    padding: 0.75rem 1.5rem;
+    border-radius: var(--border-radius-md);
+    text-decoration: none;
+    font-weight: 500;
+    transition: all var(--transition-fast);
+}
+
+.github-button:hover {
+    background-color: #3a3f43;
+    transform: translateY(-2px);
+}
+
+/* Footer */
+footer {
+    background-color: var(--bg-color);
+    padding: 4rem 0 1.5rem;
+    border-top: 1px solid var(--border-color);
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-bottom: 3rem;
+}
+
+.footer-logo {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--text-color);
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 1rem;
+}
+
+.footer-logo i {
+    color: var(--primary-color);
+}
+
+.footer-links {
+    display: flex;
+    gap: 1.5rem;
+}
+
+.footer-links a {
+    color: var(--text-color-muted);
+    text-decoration: none;
+    transition: color var(--transition-fast);
+}
+
+.footer-links a:hover {
+    color: var(--primary-light);
+}
+
+.footer-bottom {
+    text-align: center;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--border-color);
+    color: var(--text-color-muted);
+    font-size: 0.9rem;
+}
+
+/* Animation Active States */
+#original-message {
+    transition: opacity var(--transition-fast);
+}
+
+#received-message {
+    transition: all var(--transition-normal);
+}
+
+#received-message.active {
+    color: var(--success-color);
+}
+
+#encrypted-message.active {
+    background-color: var(--primary-bg);
+    border: 1px solid var(--primary-color);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    nav ul {
+        gap: 1rem;
+    }
+    
+    .hero-content h1 {
+        font-size: 2.25rem;
+    }
+    
+    .encryption-process {
+        flex-direction: column;
+        gap: 2rem;
+    }
+    
+    .process-step {
+        width: 100%;
+    }
+    
+    .step-line {
+        width: 2px;
+        height: 30px;
+        top: 40px;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    
+    .security .container,
+    .hero .container {
+        flex-direction: column;
+    }
+    
+    .footer-content {
+        flex-direction: column;
+        gap: 1.5rem;
+        align-items: flex-start;
+    }
+    
+    .footer-links {
+        flex-wrap: wrap;
+    }
+}
+
+@media (max-width: 480px) {
+    nav ul {
+        display: none;
+    }
+    
+    .hero-content h1 {
+        font-size: 2rem;
+    }
+    
+    .cta-group {
+        flex-direction: column;
+    }
+    
+    .features h2,
+    .security-content h2,
+    .about h2 {
+        font-size: 2rem;
+    }
+}
