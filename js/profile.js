@@ -225,9 +225,22 @@ document.addEventListener('DOMContentLoaded', function() {
     });
     
     // Logout
-    logoutBtn.addEventListener('click', function() {
-        window.location.href = 'logout.php';
-    });
+    // logoutBtn.addEventListener('click', function() {
+    //     window.location.href = 'logout.php';
+    // });
+
+    // if not the logout.php file will not work so use fetch to call the logout API
+    if (logoutBtn) {
+        logoutBtn.addEventListener('click', async () => {
+            try {
+                await fetch('api/logout.php');
+                window.location.href = 'login.php';
+            } catch (error) {
+                console.error('Logout error:', error);
+            }
+        });
+    }
+
     
     // Modal functions
     function showConfirmModal(title, message, confirmAction) {

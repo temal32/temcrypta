@@ -46,7 +46,13 @@ Temcrypta uses modern cryptographic technologies to ensure your messages remain 
    chmod 660 db/messenger.db
    sudo chown www-data:www-data db/messenger.db # for apache2
    ```
-5. Access the application through your web browser
+5. Run the app:
+   ```bash
+   php -S localhost:8000
+   ```
+   Note: As we used PHP code without artisan, no need to run php artisan serve as using in Laravel.
+
+6. Access the application through your web browser
 
 ## 🛡️ Technical Implementation
 Temcrypta implements industry-standard encryption:
